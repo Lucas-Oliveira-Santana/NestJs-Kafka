@@ -1,0 +1,49 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+///CADA EMPRESA
+model Client {
+  id            String          @id @default(uuid())
+  tenant_id     Int
+  Opportunities Opportunities[]
+
+  @@map("clients")
+}
+
+///OPORTUNIDADES DA EMPRESA
+model Opportunities {
+  id        String  @id @default(uuid())
+  Client    Client? @relation(fields: [client_id], references: [id], onDelete: Cascade)
+  client_id String?
+
+  customer_id        Int
+  customer_email     String
+  customer_firstname String
+  customer_lastname  String
+  customer_phone     String
+
+  Items Items[]
+
+  @@map("opportunities")
+}
+
+model Items {
+  id              String         @id @default(uuid())
+  item_id         Int
+  item_name       String
+  item_quantity   Int
+  Opportunities   Opportunities? @relation(fields: [opportunitiesId], references: [id], onDelete: Cascade)
+  opportunitiesId String?
+
+  @@map("items")
+}
