@@ -3,7 +3,6 @@ import {
   itemsDto,
 } from 'src/modules/opportunities/dtos/create-opportunity.dto';
 import { OpportunitiesRepository } from '../opportunitiesRepository';
-import { Opportunities } from '@prisma/client';
 import { HttpException, Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/database/prisma.service';
 

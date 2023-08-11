@@ -1,4 +1,3 @@
-import { Client, Items, Opportunities } from '@prisma/client';
 import {
   CreateOpportunityDto,
   itemsDto,
@@ -7,12 +6,9 @@ import {
 export abstract class OpportunitiesRepository {
   abstract createOpportunity(data: CreateOpportunityDto);
 
-  abstract findOrCreateClient(id: number): Promise<Client>;
+  abstract findOrCreateClient(id: number);
 
-  abstract createItem(
-    items: itemsDto[],
-    opportunityId: string,
-  ): Promise<Items[]>;
+  abstract createItem(items: itemsDto[], opportunityId: string);
 
   abstract getOpportunitiesByClient(id: number);
 }
