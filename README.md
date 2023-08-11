@@ -20,7 +20,7 @@ cd NestJs-Kafka
 
  ## Docker up
   ```bash
-  sudo docker-compose up --build
+  sudo docker-compose up
   ```
 
  ## Run Migrations
