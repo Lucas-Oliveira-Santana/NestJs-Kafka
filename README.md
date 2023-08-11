@@ -41,13 +41,14 @@ access your browser
 http://localhost:9021/
 ```
 
+### Create a message
  ```bash
 at topics "cart-abandoned'
 
 you can create a message:
 
 {
-  "id": 52,
+  "id": 53,
   "items": [
     {
       "id": 152,
@@ -64,3 +65,24 @@ you can create a message:
   }
 }
 ```
+
+## Get Opportunities By Client
+```
+route:
+http://localhost:3000/opportunities
+
+
+example:
+{
+	"id":53
+}
+```
+
+## Technologies used
+- [Typescript](https://www.typescriptlang.org/)
+- [NestJs](https://nestjs.com/)
+- [Kafka](https://kafka.apache.org/)
+- [Docker](https://www.docker.com/), [docker-compose](https://docs.docker.com/compose/)
+- [PrismaIO](https://www.prisma.io/)
+- [PostgresSQL](https://www.postgresql.org/)
+
