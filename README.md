@@ -11,7 +11,7 @@ To run the project, follow the next steps:
 
 ## Clone Repository
 ```bash
-git@github.com:Lucas-Oliveira-Santana/NestJs-Kafka.git
+git clone git@github.com:Lucas-Oliveira-Santana/NestJs-Kafka.git
 
 cd NestJs-Kafka
 ```
