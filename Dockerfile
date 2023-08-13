@@ -3,6 +3,7 @@ FROM node
 WORKDIR /home/node/app
 
 COPY package.json ./
+COPY prisma ./
 COPY package-lock.json ./
 
 RUN npm install
